@@ -1,3 +1,7 @@
+# 9/10/24
+# PD 1-2
+# Towaf Hossain
+
 # Variables storing user input
 fname = input("What is your first name?")
 lname = input("What is your last name?")
