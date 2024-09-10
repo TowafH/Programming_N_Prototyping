@@ -1,3 +1,7 @@
+# 9/9/24
+# PD 1-2
+# Towaf Hossain
+
 fname = "Towaf" #String
 age = 16 #Int Number
 male = True #Boolean
