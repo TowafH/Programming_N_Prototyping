@@ -1,3 +1,8 @@
+# 9/16/24
+# 1-2
+# Towaf Hossain
+
+
 fname = str(input("Enter your first name"))
 lname = str(input("Enter your last name"))
 age = int(input("How old are you?"))
