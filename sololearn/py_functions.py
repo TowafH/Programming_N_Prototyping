@@ -51,3 +51,9 @@ print(items[2])
 print("\nlen()")
 movies = ["Shang Chi", "Your Name"]
 print(len(movies))
+
+#max() --> Returns HIGHEST NUMBER in a list *NO DOT NOTATION
+print("\nmax()")
+points = (12, 14, 19, 3, 5)
+winner = max(points)
+print(winner)
