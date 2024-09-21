@@ -12,9 +12,14 @@ print('sMaRtPhOnE'.upper())
 print("\n.capitalize()")
 print("happy birthday".capitalize())
 
-# find() --> Returns INDEX # in the String
+# .find() --> Returns INDEX # in the String
 print("\n.find()")
 print("Bee".find("e"))
+
+# .count() --> Returns AMOUNT of an item within a list
+print("\n.count()")
+scores = [7, 9, 10, 7, 7, 11, 133]
+print(scores.count(7))
 
 #.append() --> Adds a new item to the END of a list
 #.append() --> Strings are IMMUTABLE, will not append to strings
