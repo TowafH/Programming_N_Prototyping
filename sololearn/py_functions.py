@@ -21,14 +21,14 @@ print("\n.count()")
 scores = [7, 9, 10, 7, 7, 11, 133]
 print(scores.count(7))
 
-#.append() --> Adds a new item to the END of a list
-#.append() --> Strings are IMMUTABLE, will not append to strings
+#.append() --> Adds a new item to the END of a LIST
+#.append() --> Strings are IMMUTABLE, won't append to strings
 print("\n.append()")
 songs = ["Rats", "Heatwaves"]
 songs.append("SPECIALZ")
 print(songs)
 
-#.pop() --> Removes an element from a list
+#.pop() --> Removes an element from a LIST
 # The index is the only accepted argument
 # variable_name.pop(1)
 print("\n.pop()")
@@ -37,7 +37,7 @@ books.pop(0)
 print(books)
 print(books[1])
 
-#.insert() --> Add element to a SPECIFIC position in a list
+#.insert() --> Add element to a SPECIFIC position in a LIST
 # 2 Required Arguments
 # insert(index, item) (string/bool/num)
 print("\n.insert()")
@@ -47,12 +47,12 @@ print(items)
 print(items[2])
 
 
-#len() --> Returns AMOUNT of items in a list  *NO DOT NOTATION
+#len() --> Returns AMOUNT of items in a LIST  *NO DOT NOTATION
 print("\nlen()")
 movies = ["Shang Chi", "Your Name"]
 print(len(movies))
 
-#max() --> Returns HIGHEST NUMBER in a list *NO DOT NOTATION
+#max() --> Returns HIGHEST NUMBER in TUPLE/LIST *NO DOT NOTATION
 print("\nmax()")
 points = (12, 14, 19, 3, 5)
 winner = max(points)
