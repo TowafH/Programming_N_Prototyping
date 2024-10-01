@@ -40,7 +40,23 @@ toonies_in_cents = toonies * 200
 
 # Total Amount Of Money
 total_cents = penny_in_cents + nickel_in_cents + dimes_in_cents + quarters_in_cents + loonies_in_cents + toonies_in_cents
-total_dollars = total_cents / 100
+total_value = total_cents / 100
+
+
+
+
+totalDollars = total_value // 1 #Gives the Total Whole $
+print(totalDollars)
+change = total_value - totalDollars
+change_quarter = (change) % 4
+
+inQurts = int(change*4)
+inDimes = int(change*10) - inQurts
+inNickels = int(change*20) - (inDimes*2) 
+inCents = int(change*100) - (inNickels*5) - (inDimes*10)
+print(f"Your total is : ${totalDollars}, {inQurts} Quarters, {inDimes} Dimes, {inNickels} Nickels, {inCents} Cents")
+# i.e: 13.67 or 13$ and 2 quarters, 1 dime, 1 nickel, 2 cents
+
 
 # Print the money and display the amount of each
-print("You have a total of $" + str(total_dollars) + "\n\nYou had " + str(penny) + " pennies, " + str(nickel) + " nickels, " + str(dime) + " dimes, " + str(quarter) + " quarters, " + str(loonies) + " loonies, and " + str(toonies) + " toonies.") 
+# print("You have a total of $" + str(totalDollars) + "\n\nYou had " + str(penny) + " pennies, " + str(nickel) + " nickels, " + str(dime) + " dimes, " + str(quarter) + " quarters, " + str(loonies) + " loonies, and " + str(toonies) + " toonies.") 
