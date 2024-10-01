@@ -41,22 +41,28 @@ toonies_in_cents = toonies * 200
 # Total Amount Of Money
 total_cents = penny_in_cents + nickel_in_cents + dimes_in_cents + quarters_in_cents + loonies_in_cents + toonies_in_cents
 total_value = total_cents / 100
+print("Total $",total_value)
 
 
+totalDollars = total_value // 1  # Get whole dollars
+print("Whole #: $", int(totalDollars))
 
+total_change = total_value - totalDollars  # Get the change amount
+print("Change Amount: $", format(total_change, '.2f'))  # 0.67
 
-totalDollars = total_value // 1 #Gives the Total Whole $
-print(totalDollars)
-change = total_value - totalDollars
-change_quarter = (change) % 4
+# Convert the change amount to cents
+change_in_cents = int(total_change * 100)
 
-inQurts = int(change*4)
-inDimes = int(change*10) - inQurts
-inNickels = int(change*20) - (inDimes*2) 
-inCents = int(change*100) - (inNickels*5) - (inDimes*10)
-print(f"Your total is : ${totalDollars}, {inQurts} Quarters, {inDimes} Dimes, {inNickels} Nickels, {inCents} Cents")
-# i.e: 13.67 or 13$ and 2 quarters, 1 dime, 1 nickel, 2 cents
+# Calculate the number of each coin type
+inQuarts = change_in_cents // 25  # Number of quarters
+remaining_cents = change_in_cents % 25  # Remaining cents after quarters
+inDimes = remaining_cents // 10  # Number of dimes
+remaining_cents = remaining_cents % 10  # Remaining cents after dimes
+inNickels = remaining_cents // 5  # Number of nickels
+inCents = remaining_cents % 5  # Remaining cents after nickels
 
-
-# Print the money and display the amount of each
-# print("You have a total of $" + str(totalDollars) + "\n\nYou had " + str(penny) + " pennies, " + str(nickel) + " nickels, " + str(dime) + " dimes, " + str(quarter) + " quarters, " + str(loonies) + " loonies, and " + str(toonies) + " toonies.") 
+# Print the results
+print("Quarters:", inQuarts)  # Correct calculation for quarters
+print("Dimes:", inDimes)       # Correct calculation for dimes
+print("Nickels:", inNickels)   # Correct calculation for nickels
+print("Cents:", inCents)       # Remaining cents
