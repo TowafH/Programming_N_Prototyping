@@ -62,11 +62,11 @@ remaining_cents = remaining_cents % 10  # Remaining cents after dimes
 
 inNickels = remaining_cents // 5  # Number of nickels
 inCents = remaining_cents % 5  # Remaining cents after nickels
+# i.e: 13.67 or 13$ and 2 quarters, 1 dime, 1 nickel, 2 cents
 
 # Display 
 print("Quarters:", inQuarts) 
 print("Dimes:", inDimes)       
 print("Nickels:", inNickels)   
 print("Cents:", inCents)
-print(f"You have a total of ${total_value:.2f}. You had {penny} pennies, {nickel} nickels, {dime} dimes, {quarter} quarters, {loonies} loonies, and {toonies} toonies.")
-
+print(f"\nYou have a total of ${int(totalDollars)},{penny} pennies, {nickel} nickels, {dime} dimes, {quarter} quarters, {loonies} loonies, and {toonies} toonies.")
