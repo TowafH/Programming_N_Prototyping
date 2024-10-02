@@ -44,7 +44,7 @@ total_value = total_cents / 100
 print("Total $",total_value)
 
 
-totalDollars = total_value // 1  # Get whole dollars
+totalDollars = total_value // 1  # Get the whole dollars
 print("Whole #: $", int(totalDollars))
 
 total_change = total_value - totalDollars  # Get the change amount
@@ -56,13 +56,17 @@ change_in_cents = int(total_change * 100)
 # Calculate the number of each coin type
 inQuarts = change_in_cents // 25  # Number of quarters
 remaining_cents = change_in_cents % 25  # Remaining cents after quarters
+
 inDimes = remaining_cents // 10  # Number of dimes
 remaining_cents = remaining_cents % 10  # Remaining cents after dimes
+
 inNickels = remaining_cents // 5  # Number of nickels
 inCents = remaining_cents % 5  # Remaining cents after nickels
 
-# Print the results
-print("Quarters:", inQuarts)  # Correct calculation for quarters
-print("Dimes:", inDimes)       # Correct calculation for dimes
-print("Nickels:", inNickels)   # Correct calculation for nickels
-print("Cents:", inCents)       # Remaining cents
+# Display 
+print("Quarters:", inQuarts) 
+print("Dimes:", inDimes)       
+print("Nickels:", inNickels)   
+print("Cents:", inCents)
+print(f"You have a total of ${total_value:.2f}. You had {penny} pennies, {nickel} nickels, {dime} dimes, {quarter} quarters, {loonies} loonies, and {toonies} toonies.")
+
