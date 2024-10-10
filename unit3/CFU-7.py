@@ -1,3 +1,7 @@
+# 10/10/24
+# PD 1-2
+# Towaf Hossain
+
 print("Welcome to the Addition & Average Calculator!\n")
 
 def calculate_addition(x1, x2, x3):
