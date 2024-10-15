@@ -1,3 +1,23 @@
+# 10/15/24
+# PD 1-2
+# Towaf Hossain
+# CFU - 8 GrubHub App
+'''
+GrubHub Program - 
+
+First ask the user if they ordered delivery
+
+Version 1
+- If the user responds “yes” - say great!If the user responds with anything else say: “NO?! So who is cooking?”
+
+Version 2 
+- Builds on ver1If the user responds “yes….
+- Ask the user the cost of the food ordered
+- Ask the user how many people are splitting the order
+- Calculate and print out the cost per person
+Ex: “The cost per person is $2.50
+'''
+
 print("Welcome to our delivery App!")
 delivery = input("Did you order delivery?")
 
