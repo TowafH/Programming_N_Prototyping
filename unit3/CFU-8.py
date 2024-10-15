@@ -31,6 +31,7 @@ if delivery == "Yes" or delivery == "yes":
     print(f"The total cost of the order is: ${cost}")
     print(f"You're splitting the order with {people} people\n")
     print(f"The cost per person is ${average_cost}")
+    # We can do ${average_cost:.2f} to recieve only 2 decimal places
 else:
     # If the above conditon is false, then run this
     print("NO?! SO who is cooking!")
