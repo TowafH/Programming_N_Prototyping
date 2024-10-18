@@ -18,6 +18,8 @@ while rolls > 0:
     elif guess != random_number:
         score -= 1
         print(f"You guessed {random_number} incorrectly! You lost 1 point.")
+    else:
+        print("Your guess is out of the 1-6 range!")
     rolls -= 1
     
 print(f"\nYour final score: {score}")
