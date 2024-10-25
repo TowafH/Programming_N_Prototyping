@@ -4,8 +4,9 @@
 # Towaf Hossain
 
 '''
-1) Using For Loop create a program that prints out the numbers: 10, 20, 30, 40, 50 up to 70
-2) Using For Loop create a program that prints out the numbers:
+1) Using For Loop Create a program that prints out the numbers:  10, 20, 30, 40, 50 up to 70
+2)  Using For Loop create a program that prints out the numbers: 0, 0.5 , 1 , 1.5, 2 ….   up to 10.0
+3)  Sing the 99 bottles of beer song
 '''
 
 
