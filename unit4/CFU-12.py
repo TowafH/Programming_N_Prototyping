@@ -3,10 +3,17 @@
 # Towaf Hossain
 
 password = "simonsnyc"
+guess = ""
+num_guess = 0
 
-guess = input("Enter a Password")
+while guess != password and num_guess != 3:
 
-while guess != password:
-    print("Wrong Password!")
     guess = input("Enter a Password!")
-print("Correct! You May Enter!")
+    num_guess += 1
+
+    if guess == password:
+        print("Correct, You may enter!")
+    elif num_guess == 3:
+        print("Incorrect, You may not enter!")
+    else:
+        print("Wrong Password")
