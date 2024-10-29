@@ -9,5 +9,4 @@ guess = input("Enter a Password")
 while guess != password:
     print("Wrong Password!")
     guess = input("Enter a Password!")
-    if guess == password:
-        print("Correct! You May Enter!")
+print("Correct! You May Enter!")
