@@ -1,7 +1,23 @@
 # 10/30/24
 # PD 1-2
 # Towaf Hossain
- 
+# CFU 12 While Loops
+'''
+Version 1:
+-Write a program that asks the user for the password.
+-The Password should initially be set to “simonsnyc”
+-It keeps asking them for the password until they get it correct.
+-For the incorrect password, it should say “Wrong Password!)
+-For correct password it should say “Correct! You may enter….”
+-And then it ends the program
+
+Version 2 : 
+Modify Version 1 so that the User gets only 3 chances.
+ HINTS:  Use a variable to keep track of the number of guesses.
+The User is stuck in the While loop as long as num_guesses < 3 and guess != PW
+''' 
+
+
 #V1
 def version1():
     password = "simonsnyc"
