@@ -1,7 +1,7 @@
 # 10/30/24
 # PD 1-2
 # Towaf Hossain
-# CFU 12 While Loops
+# CFU-12 While Loops
 '''
 Version 1:
 -Write a program that asks the user for the password.
