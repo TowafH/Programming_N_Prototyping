@@ -6,7 +6,7 @@ password = "simonsnyc"
 guess = ""
 num_guess = 0
 
-while guess != password and num_guess != 3:
+while guess != password and num_guess < 3:
 
     guess = input("Enter a Password!")
     num_guess += 1
@@ -14,6 +14,6 @@ while guess != password and num_guess != 3:
     if guess == password:
         print("Correct, You may enter!")
     elif num_guess == 3:
-        print("Incorrect, You may not enter!")
+        print("You didn't get it in 3 tries! Try Again Later!")
     else:
-        print("Wrong Password")
+        print(f"Wrong Password - Try: #{num_guess}")
