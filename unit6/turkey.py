@@ -13,7 +13,20 @@ def draw_handler(canvas):
     #canvas.draw_circle((x1, y1), radius, line_width, "color")
 
     canvas.draw_circle((100, 100), 50, 2, turkey_color, turkey_color) # Turkey Body
+    def turkeyLeftLeg():
+        canvas.draw_line([80,140],[80,160], 5, "Black") # Turkey leg
+        canvas.draw_line([80,160],[70, 165], 5, "Black") # Turkey Left Foot
+        canvas.draw_line([80,160],[90, 165], 5, "Black") # Turkey Right Foot
+        canvas.draw_line([80, 160],[80,170], 5, "Black") # Turkey Middle Foot
 
+    def turkeyRightLeg():
+        canvas.draw_line([120, 140], [120, 160], 5, "Black")
+        canvas.draw_line([120,160],[110, 165], 5, "Black") # Turkey Left Foot
+        canvas.draw_line([120,160],[130, 165], 5, "Black") # Turkey Right Foot
+        canvas.draw_line([120, 160],[120,170], 5, "Black") # Turkey Middle Foot
+    
+    turkeyLeftLeg()
+    turkeyRightLeg()
 
 # Code to Modify the Frame
     # Creates the frame w/ Title & Dimensions
