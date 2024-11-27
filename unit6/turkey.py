@@ -11,8 +11,9 @@ def draw_handler(canvas):
     #canvas.draw_line([x1,y1],[x2,y2], line_width, "color")
     #canvas.draw_polygon([(x1, y1), (x2,y2), (x3,y3)], line_width, "color")
     #canvas.draw_circle((x1, y1), radius, line_width, "color")
-
-    canvas.draw_circle((100, 100), 50, 2, turkey_color, turkey_color) # Turkey Body
+    def turkeyBody():
+        canvas.draw_circle((100, 100), 50, 2, turkey_color, turkey_color) # Turkey Body
+        canvas.draw_polygon([(85, 100), (100, 120), (115, 100)], 2, "Orange", "Orange")
     def turkeyLeftLeg():
         canvas.draw_line([80,140],[80,160], 5, "Black") # Turkey leg
         canvas.draw_line([80,160],[70, 165], 5, "Black") # Turkey Left Foot
@@ -25,6 +26,7 @@ def draw_handler(canvas):
         canvas.draw_line([120,160],[130, 165], 5, "Black") # Turkey Right Foot
         canvas.draw_line([120, 160],[120,170], 5, "Black") # Turkey Middle Foot
     
+    turkeyBody()
     turkeyLeftLeg()
     turkeyRightLeg()
 
