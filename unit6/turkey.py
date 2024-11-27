@@ -11,9 +11,16 @@ def draw_handler(canvas):
     #canvas.draw_line([x1,y1],[x2,y2], line_width, "color")
     #canvas.draw_polygon([(x1, y1), (x2,y2), (x3,y3)], line_width, "color")
     #canvas.draw_circle((x1, y1), radius, line_width, "color")
+    #def turkeyFeathers():
+        #canvas.draw_polygon([],[], 5, "color")
+    def turkeyFace():
+        canvas.draw_circle((85, 80), 3, 2, "black", "black") # Turkey Left Eye
+        canvas.draw_circle((115, 80), 3, 2, "black", "black") # Turkey Left Eye
+
     def turkeyBody():
         canvas.draw_circle((100, 100), 50, 2, turkey_color, turkey_color) # Turkey Body
-        canvas.draw_polygon([(85, 100), (100, 120), (115, 100)], 2, "Orange", "Orange")
+        canvas.draw_polygon([(85, 90), (100, 110), (115, 90)], 2, "Orange", "Orange") # Turkey Beak
+        
     def turkeyLeftLeg():
         canvas.draw_line([80,140],[80,160], 5, "Black") # Turkey leg
         canvas.draw_line([80,160],[70, 165], 5, "Black") # Turkey Left Foot
@@ -25,8 +32,8 @@ def draw_handler(canvas):
         canvas.draw_line([120,160],[110, 165], 5, "Black") # Turkey Left Foot
         canvas.draw_line([120,160],[130, 165], 5, "Black") # Turkey Right Foot
         canvas.draw_line([120, 160],[120,170], 5, "Black") # Turkey Middle Foot
-    
     turkeyBody()
+    turkeyFace()
     turkeyLeftLeg()
     turkeyRightLeg()
 
