@@ -1,6 +1,8 @@
 # Towaf Hossain
 # PD 1-2
 # 12/9/24
+# CFU - 17
+
 
 import simplegui
 
@@ -37,12 +39,15 @@ def draw_triangle(canvas, cx, cy, size):
 
     
 def draw_ellipse(canvas, cx, cy, size):
-    half_size = size / 2
-    canvas.draw_polygon([(cx, cy + half_size),
-                        (cx + half_size, cy - half_size),
-                        (cx - half_size, cy - half_size),
-                        (cx - half_size, cy - half_size)],
-                        half_size, "#ffb900", "#ffb900")
+    half_width = size / 2  # Horizontal radius
+    half_height = size / 4  # Vertical radius
+    
+    canvas.draw_polygon([(cx, cy + half_height),  # Bottom-center
+                         (cx + half_width, cy),  # Right-center
+                         (cx, cy - half_height),  # Top-center
+                         (cx - half_width, cy)],  # Left-center
+                        2, "#ffb900", "#ffb900")
+
     
 def draw(canvas):
     # Calculate Quadrants
@@ -51,16 +56,16 @@ def draw(canvas):
     
     # Toggle Each Quadrant
     if show_circle:
-        draw_circle(canvas, quadrant_width * 0.5, quadrant_height * 0.5, 25)  # Top-left Circle
+        draw_circle(canvas, quadrant_width * 0.5, quadrant_height * 0.5, 50)  # Top-left Circle
 
     if show_square:
-        draw_square(canvas, quadrant_width * 1.5, quadrant_height * 0.5, 25)  # Top-right Square
+        draw_square(canvas, quadrant_width * 1.5, quadrant_height * 0.5, 50)  # Top-right Square
 
     if show_triangle:
-        draw_triangle(canvas, quadrant_width / 2, quadrant_height * 1.5, 25)  # Bottom-left Triangle
+        draw_triangle(canvas, quadrant_width / 2, quadrant_height * 1.5, 50)  # Bottom-left Triangle
         
     if show_ellipse:
-        draw_ellipse(canvas, quadrant_width * 1.5, quadrant_height * 1.5, 25) # Bottom-right ellipse
+        draw_ellipse(canvas, quadrant_width * 1.5, quadrant_height * 1.5, 50) # Bottom-right ellipse
 
 
 # Button Handlers
