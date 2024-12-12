@@ -20,15 +20,19 @@ def draw_handler(canvas):
         global snowflakes
         global snowfall_speed
         global snow_y
-        
-        canvas.draw_polygon([(0,0), (width, 0), (width, height / 2), (0, height / 2)], 1, "White", "Skyblue")
+      
         for i in range(snow_flakes):
             snowflakeX = random.randint(0, width)
             snowflakeY = random.randint(0, height)
             canvas.draw_circle((snowflakeX, snowflakeY), 5, 2, "Black", "White")
     
     def sun():
+        global width
+        global height
         global y1
+        
+        canvas.draw_polygon([(0,0), (width, 0), (width, height / 2), (0, height / 2)], 1, "White", "Skyblue")
+        
         if y1 > 100: 
             y1 -= 1
         canvas.draw_circle((300, y1), 25, 2, "Black", "#FFE484")
@@ -46,12 +50,15 @@ def draw_handler(canvas):
         canvas.draw_polygon([(100, 450), (100, 200), (0, 200), (0, 450)], 1, "Black", "Pale") # Rear
         canvas.draw_polygon([(100, 200), (150, 175), (150, 375), (100, 450)], 1, "Black", "Pale") # Front 
         canvas.draw_polygon([(150, 175), (0, 175), (0, 200), (100, 200)], 1, "Black", "Pale") # Roof
+        # Details
+        canvas.draw_polygon([(10, 440), (90, 440), (90, 215), (10, 215)], 1, "Black", "White") # Window
+        canvas.draw_polygon([(115, 430), (115, 370), (130, 355), (140,355)], 1, "Black", "White")
     
-    snowflakes()
     sun()
     horizon()
     street()
     skyscraper()
+    snowflakes()
 
 frame = simplegui.create_frame("Christmas St.", width, height)
 frame.set_canvas_background("LightGray")
