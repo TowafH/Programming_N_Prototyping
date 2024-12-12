@@ -1,9 +1,3 @@
-# Towaf Hossain
-# PD 1-2
-# 12/12/24
-# Animation of a cityscape during christmas season. There are buildings, christmas trees, snowflakes, and sidewalks
-
-
 import simplegui
 import random
 
@@ -47,9 +41,11 @@ def draw_handler(canvas):
         canvas.draw_polygon([(20, 600), (210, 300)], 1, "Black")
         canvas.draw_polygon([(600, 600), (400, 300)], 1, "Black")  # Right Street
         canvas.draw_polygon([(580, 600), (390, 300)], 1, "Black")
+        
     def skyscraper():
-        canvas.draw_polygon([(100, 450), (100, 200), (0, 200), (0, 450)], 1, "Red") # Far Frame
-        canvas.draw_polygon([(100, 200), (150, 175)], 1, "Green")
+        canvas.draw_polygon([(100, 450), (100, 200), (0, 200), (0, 450)], 1, "Black", "Pale") # Rear
+        canvas.draw_polygon([(100, 200), (150, 175), (150, 375), (100, 450)], 1, "Black", "Pale") # Front 
+        canvas.draw_polygon([(150, 175), (0, 175), (0, 200), (100, 200)], 1, "Black", "Pale") # Roof
     
     snowflakes()
     sun()
