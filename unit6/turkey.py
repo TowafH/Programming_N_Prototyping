@@ -9,49 +9,49 @@ def draw_handler(canvas):
 
     def turkeyFace():
         # Draw eyes
-        canvas.draw_circle((85, 80), 3, 2, "black", "black")  # Left Eye
-        canvas.draw_circle((115, 80), 3, 2, "black", "black")  # Right Eye
+        canvas.draw_circle((285, 280), 15, 2, "black", "black")  # Left Eye
+        canvas.draw_circle((315, 280), 15, 2, "black", "black")  # Right Eye
 
     def turkeyBody():
         # Draw body and beak
-        canvas.draw_circle((100, 100), 50, 2, turkey_color, turkey_color)  # Turkey Body
-        canvas.draw_polygon([(85, 90), (100, 110), (115, 90)], 2, "Orange", "Orange")  # Turkey Beak
+        canvas.draw_circle((300, 300), 150, 2, turkey_color, turkey_color)  # Turkey Body
+        canvas.draw_polygon([(275, 270), (300, 330), (325, 270)], 2, "Orange", "Orange")  # Turkey Beak
 
     def draw_leg(base_x, base_y):
         # Draw individual leg and toes
-        canvas.draw_line((base_x, base_y), (base_x, base_y + 20), 5, "Black")  # Leg
-        canvas.draw_line((base_x, base_y + 20), (base_x - 10, base_y + 25), 5, "Black")  # Left Toe
-        canvas.draw_line((base_x, base_y + 20), (base_x + 10, base_y + 25), 5, "Black")  # Right Toe
-        canvas.draw_line((base_x, base_y + 20), (base_x, base_y + 30), 5, "Black")  # Middle Toe
+        canvas.draw_line((base_x, base_y), (base_x, base_y + 60), 8, "Black")  # Leg
+        canvas.draw_line((base_x, base_y + 60), (base_x - 30, base_y + 75), 8, "Black")  # Left Toe
+        canvas.draw_line((base_x, base_y + 60), (base_x + 30, base_y + 75), 8, "Black")  # Right Toe
+        canvas.draw_line((base_x, base_y + 60), (base_x, base_y + 90), 8, "Black")  # Middle Toe
 
     def draw_feathers():
         # Existing feathers as rectangles
-        canvas.draw_polygon([(50, 60), (70, 60), (70, 100), (50, 100)], 2, "#FF6F61", "#FF6F61")  # Feather 1
-        canvas.draw_polygon([(65, 40), (85, 40), (85, 80), (65, 80)], 2, "#FFA500", "#FFA500")  # Feather 2
-        canvas.draw_polygon([(80, 30), (100, 30), (100, 70), (80, 70)], 2, "#FFD700", "#FFD700")  # Feather 3
-        canvas.draw_polygon([(95, 20), (115, 20), (115, 80), (95, 80)], 2, "#8B0000", "#8B0000")  # Feather 4
-        canvas.draw_polygon([(110, 30), (130, 30), (130, 100), (110, 100)], 2, "#6B8E23", "#6B8E23")  # Feather 5
-        canvas.draw_polygon([(125, 40), (145, 40), (145, 110), (125, 110)], 2, "#4B0082", "#4B0082")  # Feather 6
+        canvas.draw_polygon([(150, 180), (210, 180), (210, 300), (150, 300)], 2, "#FF6F61", "#FF6F61")  # Feather 1
+        canvas.draw_polygon([(195, 120), (255, 120), (255, 240), (195, 240)], 2, "#FFA500", "#FFA500")  # Feather 2
+        canvas.draw_polygon([(240, 90), (300, 90), (300, 210), (240, 210)], 2, "#FFD700", "#FFD700")  # Feather 3
+        canvas.draw_polygon([(285, 60), (345, 60), (345, 240), (285, 240)], 2, "#8B0000", "#8B0000")  # Feather 4
+        canvas.draw_polygon([(330, 90), (390, 90), (390, 300), (330, 300)], 2, "#6B8E23", "#6B8E23")  # Feather 5
+        canvas.draw_polygon([(375, 120), (435, 120), (435, 330), (375, 330)], 2, "#4B0082", "#4B0082")  # Feather 6
 
     def draw_leaves():
         # Smaller, non-overlapping leaves
-        canvas.draw_polygon([(20, 140), (30, 130), (40, 140), (30, 150)], 2, "#228B22", "#228B22")  # Green Leaf 1
-        canvas.draw_polygon([(160, 140), (170, 130), (180, 140), (170, 150)], 2, "#228B22", "#228B22")  # Green Leaf 2
-        canvas.draw_polygon([(30, 170), (40, 160), (50, 170), (40, 180)], 2, "#FFD700", "#FFD700")  # Yellow Leaf 1
-        canvas.draw_polygon([(50, 180), (60, 170), (70, 180), (60, 190)], 2, "#FF6347", "#FF6347")  # Red Leaf 1
-        canvas.draw_polygon([(130, 160), (140, 150), (150, 160), (140, 170)], 2, "#FFD700", "#FFD700")  # Yellow Leaf 2
-        canvas.draw_polygon([(120, 180), (130, 170), (140, 180), (130, 190)], 2, "#FF6347", "#FF6347")  # Red Leaf 2
-        canvas.draw_polygon([(170, 180), (180, 170), (190, 180), (180, 190)], 2, "#8B4513", "#8B4513")  # Brown Leaf 1
+        canvas.draw_polygon([(60, 420), (90, 390), (120, 420), (90, 450)], 2, "#228B22", "#228B22")  # Green Leaf 1
+        canvas.draw_polygon([(480, 420), (510, 390), (540, 420), (510, 450)], 2, "#228B22", "#228B22")  # Green Leaf 2
+        canvas.draw_polygon([(90, 510), (120, 480), (150, 510), (120, 540)], 2, "#FFD700", "#FFD700")  # Yellow Leaf 1
+        canvas.draw_polygon([(150, 540), (180, 510), (210, 540), (180, 570)], 2, "#FF6347", "#FF6347")  # Red Leaf 1
+        canvas.draw_polygon([(390, 480), (420, 450), (450, 480), (420, 510)], 2, "#FFD700", "#FFD700")  # Yellow Leaf 2
+        canvas.draw_polygon([(360, 540), (390, 510), (420, 540), (390, 570)], 2, "#FF6347", "#FF6347")  # Red Leaf 2
+        canvas.draw_polygon([(510, 540), (540, 510), (570, 540), (540, 570)], 2, "#8B4513", "#8B4513")  # Brown Leaf 1
 
     def draw_pumpkin():
-        canvas.draw_polygon([(30, 15), (35, 10), (40, 20), (35, 25)], 2, "#8B4513", "#8B4513") # Pumpkin Stem
-        canvas.draw_circle((40, 40), 20, 2, "#FFA500", "#FFA500") # Pumpkin
-        canvas.draw_line((30, 40), (50, 40), 2, "#FF8C00") # Pumpkin Detail 1
-        canvas.draw_line((35, 30), (45, 50), 2, "#FF8C00") # Pumpkin Detail 2
-        canvas.draw_line((50, 30), (30, 50), 2, "#FF8C00") # Pumpkin Detail 2
+        canvas.draw_polygon([(90, 45), (105, 30), (120, 60), (105, 75)], 2, "#8B4513", "#8B4513")  # Pumpkin Stem
+        canvas.draw_circle((120, 120), 60, 2, "#FFA500", "#FFA500")  # Pumpkin
+        canvas.draw_line((90, 120), (150, 120), 4, "#FF8C00")  # Pumpkin Detail 1
+        canvas.draw_line((105, 90), (135, 150), 4, "#FF8C00")  # Pumpkin Detail 2
+        canvas.draw_line((150, 90), (90, 150), 4, "#FF8C00")  # Pumpkin Detail 2
 
-    draw_leg(80, 140)  # Turkey Left Leg
-    draw_leg(120, 140)  # Turkey Right Leg
+    draw_leg(240, 420)  # Turkey Left Leg
+    draw_leg(360, 420)  # Turkey Right Leg
     draw_feathers()
     draw_leaves()
     draw_pumpkin()
@@ -59,7 +59,7 @@ def draw_handler(canvas):
     turkeyFace()
 
 # Code to Modify the Frame
-frame = simplegui.create_frame("Thanksgiving Motif", 200, 200)  # Create frame
+frame = simplegui.create_frame("Thanksgiving Motif", 600, 600)  # Create frame
 frame.set_canvas_background("#573921")  # Set background color
 frame.set_draw_handler(draw_handler)  # Set draw handler
 
