@@ -1,0 +1,37 @@
+# Towaf Hossain
+# PD 1-2
+# 1/2/25
+# CFU 17 - Build & Build Formatting Functions
+
+box = "LoliPop"
+
+def formatting(box):
+    userInput = int(input("Choice? (1,2,3,4,5,6)")
+    if userInput == 1:
+        # Capitalize the String
+        box = box.capitalize()
+        print(box)
+    elif userInput == 2:
+        # Find & Return the Index Value of a letter in the String
+        box = box.find("i")
+        print(box)
+    if userInput == 3:
+        # Return True if the Value is a Number
+        box = box.isdigit()
+        print(box)
+    if userInput == 4:
+        # Output the variable in lowercase
+        box = box.lower()
+        print(box)
+    if userInput == 5:
+        # Replace an Index Value item for another
+        box = box.replace("o", "a")
+        print(box)
+    if userInput == 6:
+        # Output the Variable in Uppercase
+        box = box.upper()
+        print(box)
+    else:
+        print("Not a valid option")
+                       
+formatting(box)
