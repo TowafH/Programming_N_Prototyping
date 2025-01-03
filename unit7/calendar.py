@@ -1,5 +1,5 @@
 def leap_year(y):
-    if y % 4 and y % 100 and y % 400:
+    if (y % 4 == 0 and y % 100 != 0) or (y % 400 == 0):
         return 1
     else:
         return 0
@@ -20,19 +20,24 @@ def days_passed(d, m, y):
     
     for i in range(1, m):
         days += number_of_days(i, y)
-    days += d
+    days += d - 1
     
     return days
 
-# Variables
-Day = int(input("Enter a day: "))
-Month = int(input("Enter a month: "))
-Year = int(input("Enter a year: "))
-menu = int(input(f"Menu:\n 1) Calculate the number of days in the given month.\n 2) Calculate the number of days passed in the given year.\nPlease choose an option: "))
-
+# Prompt the user to enter a date
+print("Please enter a date")
+day = int(input("Day: "))
+month = int(input("Month: "))
+year = int(input("Year: "))
+    
+# Present the menu to the user
+menu = int(input(f"\nMenu:\n1) Calculate the number of days in the given month.\n2) Calculate the number of days passed in the given year.\nPlease choose an option: "))
+    
 if menu == 1:
-    print(number_of_days(Month, Year))
+	# Option 1: Calculate the number of days in the given month
+    print(number_of_days(month, year))
 elif menu == 2:
-    print(days_passed(Day, Month, Year))
+    # Option 2: Calculate the number of days passed in the given year
+   	print(days_passed(day, month, year)) 
 else:
-    print("Invalid")
+    print("Invalid menu choice.")  # Error handling for invalid menu choice
