@@ -15,3 +15,15 @@ print(str(students[1:5]) + " are " + str(ages[1:5]) + " years old, respectively"
 print("")
 for i in range(len(students)):
     print(f"{i}: {students[i]} is {ages[i]} years old")
+    
+# Append
+groceries.append("Lolipop")
+print(f"\n{groceries}")
+
+# Insert
+groceries.insert(0, "Luna")
+print(f"\n{groceries}")
+
+# Remove
+groceries.remove("Eggs")
+print(f"\n{groceries}")
