@@ -5,7 +5,7 @@ def draw(canvas):
     pass
 
 # Create a Frame
-frame = simplegui.create_frame("CFU #13 - Happy Dots", 800, 800)
+frame = simplegui.create_frame("Empires Horizon", 800, 800)
 # Background Color
 frame.set_canvas_background("White")
 # Draw Handler
