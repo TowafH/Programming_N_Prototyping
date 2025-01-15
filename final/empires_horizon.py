@@ -95,7 +95,14 @@ def select_eastern_woodlands():
 # Eastern Woodlands content function
 def eastern_woodlands(canvas):
     canvas.draw_text("Eastern Woodlands", (75, 50), 40, "Black")
-
+    # Box for Regions
+    canvas.draw_polygon([(50, 85), (750, 85), (750, 700), (50, 700)], 2, "#CDC7C7", "#CDC7C7")
+    #Population 
+    canvas.draw_image(population_img, 
+                      (population_img.get_width() / 2, population_img.get_height() / 2),  # Center of the image
+                      (population_img.get_width(), population_img.get_height()),         # Image size
+                      (750, 50),  # Position
+                      (40, 50))  # Fixed size
 # Create a Frame
 frame = simplegui.create_frame("Empires Horizon", 800, 800)
 
