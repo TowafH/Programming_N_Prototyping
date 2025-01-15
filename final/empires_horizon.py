@@ -33,21 +33,29 @@ def menu(canvas):
 
 
     # Eastern Woodlands Picture
-    canvas.draw_image(ew_img, 
-                      (ew_img.get_width() / 2, ew_img.get_height() / 2),  # Center of the image
-                      (ew_img.get_width(), ew_img.get_height()),         # Image size
-                      (200, 240),  # Position
-                      (250, 200))  # Fixed size
+    if ew_img.get_width() > 0 and ew_img.get_height() > 0:
+        canvas.draw_image(ew_img, 
+                        (ew_img.get_width() / 2, ew_img.get_height() / 2), 
+                        (ew_img.get_width(), ew_img.get_height()), 
+                        (200, 240), 
+                        (250, 200))
+    else:
+        canvas.draw_text("Loading image...", (200, 240), 20, "Red")
+
 
     # Eastern Woodlands Resources
     #Meat
     canvas.draw_polygon([(400, 165), (720, 165)], 15, "#FFFFFF") 
     canvas.draw_polygon([(400, 165), (600, 165)], 15, "#48C09A")
-    canvas.draw_image(meat_img, 
-                      (meat_img.get_width() / 2, meat_img.get_height() / 2),  # Center of the image
-                      (meat_img.get_width(), meat_img.get_height()),         # Image size
-                      (370, 165),  # Position
-                      (30, 25))  # Fixed size
+    if ew_img.get_width() > 0 and ew_img.get_height() > 0:
+        canvas.draw_image(ew_img, 
+                        (ew_img.get_width() / 2, ew_img.get_height() / 2), 
+                        (ew_img.get_width(), ew_img.get_height()), 
+                        (200, 240), 
+                        (250, 200))
+    else:
+        canvas.draw_text("Loading image...", (200, 240), 20, "Red")
+
     #Stone
     canvas.draw_polygon([(400, 205), (720, 205)], 15, "#FFFFFF") 
     canvas.draw_polygon([(400, 205), (650, 205)], 15, "#48C09A")
