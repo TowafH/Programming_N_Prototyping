@@ -137,6 +137,14 @@ def eastern_woodlands(canvas, response):
     # Wood Text Counter
     canvas.draw_text(str(wood_num), (675, 735), 30, "#9E5A23", "sans-serif")
 
+    # Water
+    canvas.draw_image(water_img, 
+                      (water_img.get_width() / 2, water_img.get_height() / 2),  # Center of the image
+                      (water_img.get_width(), water_img.get_height()),         # Image size
+                      (650, 770),  # Position
+                      (30, 40))  # Fixed size
+    # Water Text Counter
+    canvas.draw_text(str(water_num), (675, 780), 30, "#4796E7", "sans-serif")
 # Hunt action
 def hunt():
     global meat_num
