@@ -33,29 +33,21 @@ def menu(canvas):
 
 
     # Eastern Woodlands Picture
-    if ew_img.get_width() > 0 and ew_img.get_height() > 0:
-        canvas.draw_image(ew_img, 
-                        (ew_img.get_width() / 2, ew_img.get_height() / 2), 
-                        (ew_img.get_width(), ew_img.get_height()), 
-                        (200, 240), 
-                        (250, 200))
-    else:
-        canvas.draw_text("Loading image...", (200, 240), 20, "Red")
-
+    canvas.draw_image(ew_img, 
+                      (ew_img.get_width() / 2, ew_img.get_height() / 2),  # Center of the image
+                      (ew_img.get_width(), ew_img.get_height()),         # Image size
+                      (200, 240),  # Position
+                      (250, 200))  # Fixed size
 
     # Eastern Woodlands Resources
     #Meat
     canvas.draw_polygon([(400, 165), (720, 165)], 15, "#FFFFFF") 
     canvas.draw_polygon([(400, 165), (600, 165)], 15, "#48C09A")
-    if ew_img.get_width() > 0 and ew_img.get_height() > 0:
-        canvas.draw_image(ew_img, 
-                        (ew_img.get_width() / 2, ew_img.get_height() / 2), 
-                        (ew_img.get_width(), ew_img.get_height()), 
-                        (200, 240), 
-                        (250, 200))
-    else:
-        canvas.draw_text("Loading image...", (200, 240), 20, "Red")
-
+    canvas.draw_image(meat_img, 
+                      (meat_img.get_width() / 2, meat_img.get_height() / 2),  # Center of the image
+                      (meat_img.get_width(), meat_img.get_height()),         # Image size
+                      (370, 165),  # Position
+                      (30, 25))  # Fixed size
     #Stone
     canvas.draw_polygon([(400, 205), (720, 205)], 15, "#FFFFFF") 
     canvas.draw_polygon([(400, 205), (650, 205)], 15, "#48C09A")
@@ -103,11 +95,20 @@ def eastern_woodlands(canvas):
                       (population_img.get_width(), population_img.get_height()),         # Image size
                       (750, 50),  # Position
                       (40, 50))  # Fixed size
+def hunt():
+    global current_screen
+    if current_screen == "eastern_woodlands":
+        print("Hello")
+    else:
+        print("Please click on Eastern Woodlands")
+
 # Create a Frame
 frame = simplegui.create_frame("Empires Horizon", 800, 800)
 
 # Add buttons to the menu screen
 frame.add_button("Eastern Woodlands", select_eastern_woodlands, 200)
+frame.add_button("Hunt", hunt, 200)
+
 #frame.add_button("Great Plains", select_great_plains, 200)
 
 # Background Color
