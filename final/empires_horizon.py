@@ -35,7 +35,7 @@ def menu(canvas):
     # Eastern Woodlands Picture
     canvas.draw_image(ew_img, 
                       (ew_img.get_width() / 2, ew_img.get_height() / 2),  # Center of the image
-                      (ew_img.get_width(), ew_img.get_height()),         # Image size (original)
+                      (ew_img.get_width(), ew_img.get_height()),         # Image size
                       (200, 240),  # Position
                       (250, 200))  # Fixed size
 
@@ -45,7 +45,7 @@ def menu(canvas):
     canvas.draw_polygon([(400, 165), (600, 165)], 15, "#48C09A")
     canvas.draw_image(meat_img, 
                       (meat_img.get_width() / 2, meat_img.get_height() / 2),  # Center of the image
-                      (meat_img.get_width(), meat_img.get_height()),         # Image size (original)
+                      (meat_img.get_width(), meat_img.get_height()),         # Image size
                       (370, 165),  # Position
                       (30, 25))  # Fixed size
     #Stone
@@ -53,7 +53,7 @@ def menu(canvas):
     canvas.draw_polygon([(400, 205), (650, 205)], 15, "#48C09A")
     canvas.draw_image(stone_img, 
                       (stone_img.get_width() / 2, stone_img.get_height() / 2),  # Center of the image
-                      (stone_img.get_width(), stone_img.get_height()),         # Image size (original)
+                      (stone_img.get_width(), stone_img.get_height()),         # Image size
                       (370, 205),  # Position
                       (30, 25))  # Fixed size
 
@@ -62,7 +62,7 @@ def menu(canvas):
     canvas.draw_polygon([(400, 245), (700, 245)], 15, "#48C09A")
     canvas.draw_image(wood_img, 
                       (wood_img.get_width() / 2, wood_img.get_height() / 2),  # Center of the image
-                      (wood_img.get_width(), wood_img.get_height()),         # Image size (original)
+                      (wood_img.get_width(), wood_img.get_height()),         # Image size
                       (370, 245),  # Position
                       (30, 25))  # Fixed size
     #Water
@@ -70,13 +70,9 @@ def menu(canvas):
     canvas.draw_polygon([(400, 285), (710, 285)], 15, "#48C09A")
     canvas.draw_image(water_img, 
                       (water_img.get_width() / 2, water_img.get_height() / 2),  # Center of the image
-                      (water_img.get_width(), water_img.get_height()),         # Image size (original)
+                      (water_img.get_width(), water_img.get_height()),         # Image size
                       (370, 285),  # Position
                       (20, 25))  # Fixed size
-
-# Great Plains (Optional)
-    
-
 
 # Eastern Woodlands button click handler
 def select_eastern_woodlands():
@@ -84,25 +80,20 @@ def select_eastern_woodlands():
     current_screen = "eastern_woodlands"
 
 # Great Plains button click handler
-def select_great_plains():
-    global current_screen
-    current_screen = "great_plains"
-
+#def select_great_plains():
+    #global current_screen
+    #current_screen = "great_plains"
 
 # Eastern Woodlands content function
 def eastern_woodlands(canvas):
     canvas.draw_text("Eastern Woodlands", (75, 50), 40, "Black")
-
-
-
-
 
 # Create a Frame
 frame = simplegui.create_frame("Empires Horizon", 800, 800)
 
 # Add buttons to the menu screen
 frame.add_button("Eastern Woodlands", select_eastern_woodlands, 200)
-frame.add_button("Great Plains", select_great_plains, 200)
+#frame.add_button("Great Plains", select_great_plains, 200)
 
 # Background Color
 frame.set_canvas_background("White")
