@@ -22,20 +22,23 @@ def draw(canvas):
 
 # Menu function
 def menu(canvas):
-    canvas.draw_text("Empires Horizon", (300, 50), 40, "Black")
-
+    canvas.draw_text("Empires Horizon", (275, 50), 40, "Black")
     # Box for Regions
     canvas.draw_polygon([(50, 85), (750, 85), (750, 700), (50, 700)], 2, "#CDC7C7", "#CDC7C7")
 
+# Eastern Woodlands
     # EW - Titles
-    canvas.draw_text("Eastern Woodlands", (125, 50), 40, "Black")
+    canvas.draw_text("Eastern Woodlands", (70, 125), 35, "Black")
+    canvas.draw_text("Resources", (475, 125), 35, "Black")
+
 
     # Eastern Woodlands Picture
     canvas.draw_image(ew_img, 
                       (ew_img.get_width() / 2, ew_img.get_height() / 2),  # Center of the image
                       (ew_img.get_width(), ew_img.get_height()),         # Image size (original)
-                      (200, 250),  # Position
+                      (200, 240),  # Position
                       (250, 200))  # Fixed size
+
     # Eastern Woodlands Resources
     #Meat
     canvas.draw_polygon([(400, 165), (720, 165)], 15, "#FFFFFF") 
@@ -70,6 +73,8 @@ def menu(canvas):
                       (water_img.get_width(), water_img.get_height()),         # Image size (original)
                       (370, 285),  # Position
                       (20, 25))  # Fixed size
+
+# Great Plains (Optional)
     
 
 
