@@ -1,8 +1,3 @@
-# Towaf Hossain
-# PD 1-2
-# Fall Term Final Project - Peace Formers Game
-# Empires Horzion is a resource management and survival game! In this game, you must manage resources, build structures, and grow your population to achieve victory. However, beware of resource depletion and random events that may hinder your progress.
-
 import simplegui
 import random
 
@@ -16,17 +11,16 @@ population_img = simplegui.load_image("https://i.imgur.com/r6vJgA0.png")
 
 # In-game Images
 stone_icon = simplegui.load_image("https://i.imgur.com/bZhX2UI.png")
-well_icon = simplegui.load_image("")
-house_icon = simplegui.load_image("")
+wood_icon = simplegui.load_image("https://i.imgur.com/b0JC0Ai.png")
 
 # Screen State
 current_screen = "menu"
 
 # Resources
-meat_num = 25
-stone_num = 40
-wood_num = 50
-water_num = 45
+meat_num = 15
+stone_num = 25
+wood_num = 30
+water_num = 0
 population_num = 10
 house_num = 0
 
@@ -210,6 +204,14 @@ def eastern_woodlands(canvas, response, stone_icon):
                       (stone_icon.get_width(), stone_icon.get_height()),
                       (180, 600),
                       (220, 200))
+    # Wood Icon
+    if wood_icon.get_width() > 0 and wood_icon.get_height() > 0:
+        canvas.draw_image(wood_icon, 
+                      (wood_icon.get_width() / 2, wood_icon.get_height() / 2),
+                      (wood_icon.get_width(), wood_icon.get_height()),
+                      (650, 400),
+                      (120, 90))
+            
     # Well Icon
     if built_well == True and well_icon.get_width() > 0 and well_icon.get_height() > 0:
         canvas.draw_image(well_icon, 
@@ -292,7 +294,7 @@ def mine():
 
 # Logging action
 def logging():
-    global wood_num, response, house_num
+    global wood_num, response, house_num, wood_icon
 
     # Random Events w/ List
     events = ["You cut down a tree! +4 Wood", "You got stuck in the woods! -1 Wood", "You collected some sticks! +1 Wood", "You lost some wood! -1 Wood"]
@@ -300,6 +302,12 @@ def logging():
     
     random_event = random.randint(0, len(events) - 1)
 
+    # Load Wood Icon
+    if current_screen == "eastern_woodlands" and wood_num >= 50:
+        new_icon = simplegui.load_image("https://i.imgur.com/t0nmuMl.png")
+        if new_icon.get_width() > 0 and new_icon.get_height() > 0:
+            wood_icon = new_icon
+    
     # Event
     if current_screen == "eastern_woodlands":
         # Event Player
