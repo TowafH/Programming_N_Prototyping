@@ -12,6 +12,7 @@ population_img = simplegui.load_image("https://i.imgur.com/r6vJgA0.png")
 # In-game Icons
 stone_icon = simplegui.load_image("https://i.imgur.com/bZhX2UI.png")
 well_icon = simplegui.load_image("")
+house_icon = simplegui.load_image("")
 
 # Screen
 current_screen = "menu"
@@ -22,9 +23,10 @@ stone_num = 60
 wood_num = 80
 water_num = 70
 population_num = 10
-home_num = 0
+house_num = 0
 
 built_well = False
+built_house = False
 
 # Response
 response = "Welcome to the Eastern Woodlands!"
@@ -40,6 +42,7 @@ def draw(canvas):
         
     global meat_num, stone_num, wood_num, water_num, population_num, built_well, home_num
     
+# Win/Loss Conditions
     if meat_num >= 100 and stone_num >= 100 and wood_num >= 100 and water_num >= 100 and population_num >= 50 and home_num >= 5:
         response = "You Win!"
     elif meat_num <= 0 and stone_num <= 0 and wood_num <= 0 and water_num <= 0 and population_num <= 0:
@@ -180,6 +183,14 @@ def eastern_woodlands(canvas, response, stone_icon):
                           (well_icon.get_width(), well_icon.get_height()), 
                           (630, 575),
                           (250, 250))
+    if built_house == True and house_icon.get_width() > 0 and house_icon.get_height() > 0:
+        for i in range(house_num):
+            x_pos = 650 - (i * 140)
+            canvas.draw_image(house_icon, 
+                          (house_icon.get_width() / 2, house_icon.get_height() / 2), 
+                          (house_icon.get_width(), house_icon.get_height()), 
+                          (x_pos, 175),
+                          (100, 100))
 #E-W Functionality
 
 # Hunt action
@@ -256,15 +267,17 @@ def population():
 
 # Build Actions
 def home():
-    global home_num, wood_num, water_num, stone_num, response
+    global built_house, house_icon, house_num, wood_num, water_num, stone_num, response
     
     # Event
     if current_screen == "eastern_woodlands" and wood_num >= 20 and water_num >= 20 and stone_num >= 20:
-        response = "You successfully built one house!"
         wood_num -= 20
         water_num -= 20
         stone_num -= 20
-        home_num += 1
+        house_num += 1
+        built_house = True
+        house_icon = simplegui.load_image("https://i.imgur.com/kPiBeX8.png")
+        response = "You successfully built one house!"
     else:
         response = "You don't have enough materials!"
 
@@ -276,16 +289,15 @@ def build():
     if current_screen == "eastern_woodlands":
         if built_well == True:
             response = "You've already built a well!"
-        elif wood_num >= 20 and water_num >= 20 and meat_num >= 20 and stone_num >= 20:
+        elif wood_num >= 20 and meat_num >= 20 and stone_num >= 20:
             wood_num -= 20
-            water_num -= 20
             meat_num -= 20
             stone_num -= 20
             built_well = True
             well_icon = simplegui.load_image("https://i.imgur.com/EJjhDSN.png")
             response = "You successfully built the well!"
         else:
-            response = "You don't have enough resources to build a well!"
+            response = "You don't have enough resources!"
 
 # Water action
 def well():
