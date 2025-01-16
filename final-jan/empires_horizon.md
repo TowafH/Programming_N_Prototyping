@@ -1,58 +1,97 @@
-# Empires Horizon
 
-Empires Horizon is a resource management game in which players explore the Eastern Woodlands and manage resources such as meat, stone, wood, water, and population. The goal is to win by strategically gathering resources, constructing buildings, and ensuring survival.
+# README for **Empires Horizon**
 
----
-
-## Features
-
-- **Explore:** Navigate through the Eastern Woodlands to manage resources.
-- **Resource Management:** Collect, consume, and strategize with meat, stone, wood, water, and population.
-- **Dynamic Events:** Random events affect your resource collection.
-- **Win or Lose:** Achieve victory by gathering enough resources or face defeat if resources are depleted.
+Welcome to **Empires Horizon**, a resource management and survival game! In this game, you must manage resources, build structures, and grow your population to achieve victory. However, beware of resource depletion and random events hindering your progress.
 
 ---
 
-## Requirements
+### **Game Objective**
+To win, you must meet the following conditions:
+- **Meat**: 100+
+- **Stone**: 100+
+- **Wood**: 100+
+- **Water**: 100+
+- **Population**: 50+
+- **Houses**: 5+
 
-- **Python Environment:** Python 3
-- **SimpleGUI Module:** The game uses the SimpleGUI library, part of the CodeSkulptor platform. Visit CodeSkulptor3 to run this game
+---
 
-## How to Play
+### **Getting Started**
+1. Use CodeSkultpor3 to play the game on the web: https://py3.codeskulptor.org/#user310_Hv54O9t5rvMcfZ9.py
+2. Click on **"Eastern Woodlands"** to manage resources in the first region and expand your town.
+---
 
-### Start the Game:
-Run the Python file in CodeSkulptor3.
+### **Available Actions**
 
-### Game Controls:
-- **Hunt:** Collect or lose meat based on random events.
-- **Mine:** Gather or lose stone through mining actions.
-- **Logging:** Chop wood or face setbacks in the woods.
-- **Population:** Manage your population through growth and loss events.
-- **Build:** Construct a well when you have sufficient resources.
-- **Collect Water:** Gather water from the well after it's built.
+#### **1. Hunt**
+- **Purpose**: Gather meat.
+- **Random Events**:
+  - Successful hunts can add 2–3 units of meat.
+  - Failed hunts can reduce your meat supply.
 
-### Win or Lose Conditions:
-- **Win:** Collect at least 100 units of each resource and reach a population of 50.
-- **Lose:** Deplete all resources and population.
+#### **2. Mine**
+- **Purpose**: Gather stone.
+- **Random Events**:
+  - Success adds 2–4 units of stone.
+  - Failures can reduce your stone supply.
+- If stone supply reaches **75 or more**, the mine visuals update.
 
-## Game Screens
+#### **3. Logging**
+- **Purpose**: Gather wood.
+- **Random Events**:
+  - Success adds 1–4 units of wood.
+  - Failures can reduce your wood supply.
 
-- **Menu Screen:** Displays the game title and resource overview.
-- **Eastern Woodlands:** Interactive gameplay area for resource management.
+#### **4. Use the Well**
+- **Purpose**: Gather water after building a well.
+- **Requirement**: You must build the well first.
+- **Random Events**:
+  - Success adds 9 units of water.
+  - Failures reduce your water supply slightly.
 
-## Commands
+#### **5. Populate**
+- **Purpose**: Increase your population.
+- **Random Events**:
+  - Gains can add 2–5 people.
+  - Losses reduce the population by 1 person.
 
-Use the following in-game commands:
-- `hunt()`: Hunt for meat.
-- `mine()`: Gather stone.
-- `logging()`: Collect wood.
-- `population()`: Build a population.
-- `build()`: Construct a well.
-- `well()`: Collect water after building the well.
+#### **6. Make a House**
+- **Purpose**: Build houses to grow your population.
+- **Requirements**: 20 each of wood, stone, and water.
+- **Effect**: Increases the **house counter** by 1. Houses also boost resource collection efficiency.
 
-## Code Structure
+#### **7. Make a Well**
+- **Purpose**: Build a well to enable water collection.
+- **Requirements**: 20 each of wood, stone, and meat.
+- **Effect**: Unlocks the ability to gather water using the well.
 
-- **Images:** Image assets for visual elements.
-- **Resources:** Tracks resource levels and interactions.
-- **Screens:** Handles the menu and gameplay screens.
-- **Actions:** Functions for hunting, mining, logging, population management, and building.
+---
+
+### **How to Win**
+1. **Gather Resources**: Regularly hunt, mine, log, and collect water.
+2. **Build Structures**:
+   - **Well**: Enables water collection.
+   - **Houses**: Increases population and boosts resource collection efficiency.
+3. **Manage Events**: Be prepared for random events that may help or hinder your progress.
+4. **Monitor Your Resources**:
+   - Avoid running out of any resources to prevent losing the game.
+   - Invest resources wisely in building and growing your empire.
+
+---
+
+### **Losing Conditions**
+You lose the game if:
+- All resources (**meat, stone, wood, water**) and population drop to **0**.
+- Running out of any individual resource may also trigger loss conditions with warnings.
+
+---
+
+### **Tips for Success**
+- Build houses early to boost your resource collection.
+- Prioritize building the well to secure a reliable water supply.
+- Regularly monitor your resource levels to avoid unexpected losses.
+- Be mindful of random events; they can shift the game's momentum!
+
+Good luck! 
+
+May your empire thrive! 🏰
