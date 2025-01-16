@@ -1,6 +1,6 @@
 # Empires Horizon
 
-Empires Horizon is a resource management game where players explore the Eastern Woodlands and manage resources such as meat, stone, wood, water, and population. The goal is to strategically gather resources, construct buildings, and ensure survival to win the game.
+Empires Horizon is a resource management game in which players explore the Eastern Woodlands and manage resources such as meat, stone, wood, water, and population. The goal is to win by strategically gathering resources, constructing buildings, and ensuring survival.
 
 ---
 
