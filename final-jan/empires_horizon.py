@@ -1,3 +1,8 @@
+# Towaf Hossain
+# PD 1-2
+# Fall Term Final Project - Peace Formers Game
+# Empires Horzion is a resource management and survival game! In this game, you must manage resources, build structures, and grow your population to achieve victory. However, beware of resource depletion and random events that may hinder your progress.
+
 import simplegui
 import random
 
