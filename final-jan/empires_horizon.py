@@ -9,6 +9,9 @@ wood_img = simplegui.load_image("https://i.imgur.com/w8NBqHC.png")
 water_img = simplegui.load_image("https://i.imgur.com/izGzxxF.png")
 population_img = simplegui.load_image("https://i.imgur.com/r6vJgA0.png")
 
+# In-game Icons
+stone_icon = simplegui.load_image("https://i.imgur.com/bZhX2UI.png")
+
 # Screen
 current_screen = "menu"
 
@@ -32,7 +35,7 @@ def draw(canvas):
     if current_screen == "menu":
         menu(canvas)
     elif current_screen == "eastern_woodlands":
-        eastern_woodlands(canvas, response)
+        eastern_woodlands(canvas, response, stone_icon)
         
     global meat_num, stone_num, wood_num, water_num, population_num, built_well
     
@@ -54,17 +57,19 @@ def menu(canvas):
     canvas.draw_text("Resources", (475, 125), 35, "Black")
 
     # Eastern Woodlands Picture
-    canvas.draw_image(ew_img, 
-                      (ew_img.get_width() / 2, ew_img.get_height() / 2),  # Center of the image
-                      (ew_img.get_width(), ew_img.get_height()),         # Image size
-                      (200, 240),  # Position
-                      (250, 200))  # Fixed size
+    if ew_img.get_width() > 0 and ew_img.get_height() > 0:
+        canvas.draw_image(ew_img, 
+                        (ew_img.get_width() / 2, ew_img.get_height() / 2), 
+                        (ew_img.get_width(), ew_img.get_height()), 
+                        (200, 240), 
+                        (250, 200))
 
     # Eastern Woodlands Resources
     # Meat
     canvas.draw_polygon([(400, 165), (720, 165)], 15, "#FFFFFF") 
     canvas.draw_polygon([(400, 165), (600, 165)], 15, "#48C09A")
-    canvas.draw_image(meat_img, 
+    if ew_img.get_width() > 0 and ew_img.get_height() > 0:
+        canvas.draw_image(meat_img, 
                       (meat_img.get_width() / 2, meat_img.get_height() / 2),  # Center of the image
                       (meat_img.get_width(), meat_img.get_height()),         # Image size
                       (370, 165),  # Position
@@ -72,7 +77,8 @@ def menu(canvas):
     # Stone
     canvas.draw_polygon([(400, 205), (720, 205)], 15, "#FFFFFF") 
     canvas.draw_polygon([(400, 205), (650, 205)], 15, "#48C09A")
-    canvas.draw_image(stone_img, 
+    if ew_img.get_width() > 0 and ew_img.get_height() > 0:
+        canvas.draw_image(stone_img, 
                       (stone_img.get_width() / 2, stone_img.get_height() / 2),  # Center of the image
                       (stone_img.get_width(), stone_img.get_height()),         # Image size
                       (370, 205),  # Position
@@ -81,7 +87,8 @@ def menu(canvas):
     # Wood
     canvas.draw_polygon([(400, 245), (720, 245)], 15, "#FFFFFF") 
     canvas.draw_polygon([(400, 245), (700, 245)], 15, "#48C09A")
-    canvas.draw_image(wood_img, 
+    if ew_img.get_width() > 0 and ew_img.get_height() > 0:
+        canvas.draw_image(wood_img, 
                       (wood_img.get_width() / 2, wood_img.get_height() / 2),  # Center of the image
                       (wood_img.get_width(), wood_img.get_height()),         # Image size
                       (370, 245),  # Position
@@ -89,7 +96,8 @@ def menu(canvas):
     # Water
     canvas.draw_polygon([(400, 285), (720, 285)], 15, "#FFFFFF") 
     canvas.draw_polygon([(400, 285), (710, 285)], 15, "#48C09A")
-    canvas.draw_image(water_img, 
+    if ew_img.get_width() > 0 and ew_img.get_height() > 0:
+        canvas.draw_image(water_img, 
                       (water_img.get_width() / 2, water_img.get_height() / 2),  # Center of the image
                       (water_img.get_width(), water_img.get_height()),         # Image size
                       (370, 285),  # Position
@@ -99,7 +107,7 @@ def menu(canvas):
 
 
 # Eastern Woodlands Content
-def eastern_woodlands(canvas, response):
+def eastern_woodlands(canvas, response, stone_icon):
     # Title
     canvas.draw_text("Eastern Woodlands", (75, 50), 40, "Black")
 
@@ -110,7 +118,8 @@ def eastern_woodlands(canvas, response):
     canvas.draw_text(response, (55, 725), 25, "Black")
 
     # Population
-    canvas.draw_image(population_img, 
+    if ew_img.get_width() > 0 and ew_img.get_height() > 0:
+        canvas.draw_image(population_img, 
                       (population_img.get_width() / 2, population_img.get_height() / 2),  # Center of the image
                       (population_img.get_width(), population_img.get_height()),         # Image size
                       (750, 35),  # Position
@@ -120,7 +129,8 @@ def eastern_woodlands(canvas, response):
     
 # Resources
     # Meat
-    canvas.draw_image(meat_img, 
+    if ew_img.get_width() > 0 and ew_img.get_height() > 0:
+        canvas.draw_image(meat_img, 
                       (meat_img.get_width() / 2, meat_img.get_height() / 2),  # Center of the image
                       (meat_img.get_width(), meat_img.get_height()),         # Image size
                       (500, 725),  # Position
@@ -129,7 +139,8 @@ def eastern_woodlands(canvas, response):
     canvas.draw_text(str(meat_num), (525, 733), 30, "#A64D4D", "sans-serif")
 
     # Stone
-    canvas.draw_image(stone_img, 
+    if ew_img.get_width() > 0 and ew_img.get_height() > 0:
+        canvas.draw_image(stone_img, 
                       (stone_img.get_width() / 2, stone_img.get_height() / 2),  # Center of the image
                       (stone_img.get_width(), stone_img.get_height()),         # Image size
                       (500, 770),  # Position
@@ -138,7 +149,8 @@ def eastern_woodlands(canvas, response):
     canvas.draw_text(str(stone_num), (525, 780), 30, "#99AAB5", "sans-serif")
     
     # Wood
-    canvas.draw_image(wood_img, 
+    if ew_img.get_width() > 0 and ew_img.get_height() > 0:
+        canvas.draw_image(wood_img, 
                       (wood_img.get_width() / 2, wood_img.get_height() / 2),  # Center of the image
                       (wood_img.get_width(), wood_img.get_height()),         # Image size
                       (650, 725),  # Position
@@ -147,7 +159,8 @@ def eastern_woodlands(canvas, response):
     canvas.draw_text(str(wood_num), (675, 735), 30, "#9E5A23", "sans-serif")
 
     # Water
-    canvas.draw_image(water_img, 
+    if ew_img.get_width() > 0 and ew_img.get_height() > 0:
+        canvas.draw_image(water_img, 
                       (water_img.get_width() / 2, water_img.get_height() / 2),  # Center of the image
                       (water_img.get_width(), water_img.get_height()),         # Image size
                       (650, 770),  # Position
@@ -155,6 +168,13 @@ def eastern_woodlands(canvas, response):
     # Water Text Counter
     canvas.draw_text(str(water_num), (675, 780), 30, "#4796E7", "sans-serif")
 
+    # Stone Preview
+    if ew_img.get_width() > 0 and ew_img.get_height() > 0:
+        canvas.draw_image(stone_icon, 
+                      (stone_icon.get_width() / 2, stone_icon.get_height() / 2),  # Center of the image
+                      (stone_icon.get_width(), stone_icon.get_height()),         # Image size
+                      (180, 600),  # Position
+                      (220, 200))  # Fixed size
 #E-W Functionality
 
 # Hunt action
@@ -175,19 +195,23 @@ def hunt():
 
 # Mine action
 def mine():
-    global stone_num, response
+    global stone_num, stone_icon, response
 
     events = ["You got diamonds! +4 Stone", "You fell into a cave! -1 Stone", "You got coal! +2 Stone!", "You broke your pickaxe! -2 Stone"]
     values = [4, -1, 2, -2]
     
     random_event = random.randint(0, len(events) - 1)
     
+    if current_screen == "eastern_woodlands" and stone_num >= 75:
+        stone_icon = simplegui.load_image("https://i.imgur.com/GYC1mQk.png")
+        
     if current_screen == "eastern_woodlands":
         # Event Player
         response = events[random_event]
         stone_num += values[random_event]
     else:
-        print("Please select Eastern Woodlands before hunting.")
+        print("Please select Eastern Woodlands before mining.")
+
 
 # Logging action
 def logging():
