@@ -18,10 +18,10 @@ house_icon = simplegui.load_image("")
 current_screen = "menu"
 
 # Resources
-meat_num = 45
-stone_num = 60
-wood_num = 80
-water_num = 70
+meat_num = 25
+stone_num = 40
+wood_num = 50
+water_num = 45
 population_num = 10
 house_num = 0
 
@@ -31,7 +31,41 @@ built_house = False
 # Response
 response = "Welcome to the Eastern Woodlands!"
 
-# Draw handler function
+# Win/Loss Conditions
+# Win
+def win():
+    global response
+    if meat_num >= 100 and stone_num >= 100 and wood_num >= 100 and water_num >= 100 and population_num >= 50 and house_num >= 5:
+        response = "Congratulations! You Won!"
+        return True
+    return False
+
+# Loss
+def loss():
+    global response
+    if meat_num <= 0 and stone_num <= 0 and wood_num <= 0 and water_num <= 0 and population_num <= 0:
+        response = "Game Over! You've lost all your resources!"
+        return True 
+    
+    if meat_num <= 0:
+        response = "You've run out of meat!"
+        return True
+    if stone_num <= 0:
+        response = "You've run out of stone!"
+        return True
+    if wood_num <= 0:
+        response = "You've run out of wood!"
+        return True
+    if water_num <= 0:
+        response = "You've run out of water!"
+        return True
+    if population_num <= 0:
+        response = "Your population has perished!"
+        return True
+
+    return False
+
+# Update the draw handler function to check for losses
 def draw(canvas):
     global current_screen, response
     
@@ -40,15 +74,9 @@ def draw(canvas):
     elif current_screen == "eastern_woodlands":
         eastern_woodlands(canvas, response, stone_icon)
         
-    global meat_num, stone_num, wood_num, water_num, population_num, built_well, home_num
-    
-# Win/Loss Conditions
-    if meat_num >= 100 and stone_num >= 100 and wood_num >= 100 and water_num >= 100 and population_num >= 50 and home_num >= 5:
-        response = "You Win!"
-    elif meat_num <= 0 and stone_num <= 0 and wood_num <= 0 and water_num <= 0 and population_num <= 0:
-        response = "You Lost!"
+    global meat_num, stone_num, wood_num, water_num, population_num, built_well, house_num
 
-# Menu function
+# Menu
 def menu(canvas):
     canvas.draw_text("Empires Horizon", (275, 50), 40, "Black")
     # Box for Regions
@@ -185,7 +213,7 @@ def eastern_woodlands(canvas, response, stone_icon):
                           (250, 250))
     if built_house == True and house_icon.get_width() > 0 and house_icon.get_height() > 0:
         for i in range(house_num):
-            x_pos = 650 - (i * 140)
+            x_pos = 700 - (i * 140)
             canvas.draw_image(house_icon, 
                           (house_icon.get_width() / 2, house_icon.get_height() / 2), 
                           (house_icon.get_width(), house_icon.get_height()), 
@@ -195,8 +223,9 @@ def eastern_woodlands(canvas, response, stone_icon):
 
 # Hunt action
 def hunt():
-    global meat_num, response
+    global meat_num, response, house_num
 
+    # Random Events w/ List
     events = ["You got a deer! +3 Meat", "You failed to hunt! -2 Meat", "You got a Salmon! +2 Meat", "You lost a fish! -2 Meat"]
     values = [3, -2, 2, -2]
     
@@ -205,14 +234,25 @@ def hunt():
     # Event
     if current_screen == "eastern_woodlands":
         response = events[random_event]
-        meat_num += values[random_event]
+        # If the player invests in houses, they gain more resources
+        if house_num == 1:
+            meat_num += 3 + values[random_event]
+        elif house_num == 2:
+            meat_num += 4 + values[random_event]
+        elif house_num == 3:
+            meat_num += 5 + values[random_event]
+        elif house_num == 4:
+            meat_num += 6 + values[random_event]
+        elif house_num == 5:
+            meat_num += 7 + values[random_event]
     else:
         print("Please select Eastern Woodlands before hunting.")
 
 # Mine action
 def mine():
-    global stone_num, stone_icon, response
+    global stone_num, stone_icon, response, house_num
 
+    # Random Events w/ List
     events = ["You got diamonds! +4 Stone", "You fell into a cave! -1 Stone", "You got coal! +2 Stone!", "You broke your pickaxe! -2 Stone"]
     values = [4, -1, 2, -2]
     
@@ -227,15 +267,25 @@ def mine():
     # Event
     if current_screen == "eastern_woodlands":
         response = events[random_event]
-        stone_num += values[random_event]
+        # If the player invests in houses, they gain more resources
+        if house_num == 1:
+            stone_num += 3 + values[random_event]
+        elif house_num == 2:
+            stone_num += 4 + values[random_event]
+        elif house_num == 3:
+            stone_num += 5 + values[random_event]
+        elif house_num == 4:
+            stone_num += 6 + values[random_event]
+        elif house_num == 5:
+            stone_num += 7 + values[random_event]
     else:
-        print("Please select Eastern Woodlands before mining.")
+        print("Please select Eastern Woodlands")
 
 # Logging action
 def logging():
-    global wood_num
-    global response
+    global wood_num, response, house_num
 
+    # Random Events w/ List
     events = ["You cut down a tree! +4 Wood", "You got stuck in the woods! -1 Wood", "You collected some sticks! +1 Wood", "You lost some wood! -1 Wood"]
     values = [4, -1, 1, -1]
     
@@ -245,14 +295,50 @@ def logging():
     if current_screen == "eastern_woodlands":
         # Event Player
         response = events[random_event]
-        wood_num += values[random_event]
+        # If the player invests in houses, they gain more resources
+        if house_num == 1:
+            wood_num += 3 + values[random_event]
+        elif house_num == 2:
+            wood_num += 4 + values[random_event]
+        elif house_num == 3:
+            wood_num += 5 + values[random_event]
+        elif house_num == 4:
+            wood_num += 6 + values[random_event]
+        elif house_num == 5:
+            wood_num += 7 + values[random_event]
     else:
-        print("Please select Eastern Woodlands before logging.")
+        print("Please select Eastern Woodlands")
 
+# Water action
+def well():
+    global built_well, water_num, response, house_num
+    
+    events = ["You collected water! +9 Water", "Your pail fell in the well! -1 Water", "You collected some dirty war! -1 Water", "You lost some water! -2 Water"]
+    values = [9, -1, -1, -2]
+    
+    random_event = random.randint(0, len(events) - 1)
+    
+    # Event
+    if current_screen == "eastern_woodlands" and built_well == True:
+        response = events[random_event]
+        if house_num == 1:
+            water_num += 3 + values[random_event]
+        elif house_num == 2:
+            water_num += 4 + values[random_event]
+        elif house_num == 3:
+            water_num += 5 + values[random_event]
+        elif house_num == 4:
+            water_num += 6 + values[random_event]
+        elif house_num == 5:
+            water_num += 7 + values[random_event]
+    else:
+        response = "You need to build a well!"
+        
 # Populate action
 def population():
     global population_num, response
     
+    # Random Events w/ List
     events = ["You gained population! +2 People", "You built a house! +5 People", "Someone left town! -1 Population", "One person died! -1 Population"]
     values = [2, 5, -1, -1]
     
@@ -263,7 +349,7 @@ def population():
         response = events[random_event]
         population_num += values[random_event]
     else:
-        print("Please select Eastern Woodlands before logging.")
+        print("Please select Eastern Woodlands")
 
 # Build Actions
 def home():
@@ -299,22 +385,6 @@ def build():
         else:
             response = "You don't have enough resources!"
 
-# Water action
-def well():
-    global built_well, water_num, response
-    
-    events = ["You collected water! +9 Water", "Your pail fell in the well! -1 Water", "You collected some dirty war! -1 Water", "You lost some water! -2 Water"]
-    values = [9, -1, -1, -2]
-    
-    random_event = random.randint(0, len(events) - 1)
-    
-    # Event
-    if current_screen == "eastern_woodlands" and built_well == True:
-        response = events[random_event]
-        water_num += values[random_event]
-    else:
-        response = "You need to build a well!"
-
 # Eastern Woodlands button click handler
 def select_eastern_woodlands():
     global current_screen
@@ -328,10 +398,10 @@ frame.add_button("Eastern Woodlands", select_eastern_woodlands, 200)
 frame.add_button("Hunt", hunt, 200)
 frame.add_button("Mine", mine, 200)
 frame.add_button("Logging", logging, 200)
+frame.add_button("Use the well", well, 200)
 frame.add_button("Populate", population, 200)
 frame.add_button("Make a house", home, 200)
 frame.add_button("Make a well", build, 200)
-frame.add_button("Use the well", well, 200)
 
 # Background Color
 frame.set_canvas_background("White")
