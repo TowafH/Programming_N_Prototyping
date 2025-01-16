@@ -19,6 +19,9 @@ wood_num = 80
 water_num = 70
 population_num = 10
 
+built_well = False
+built_house = False
+
 # Response
 response = "Welcome to the Eastern Woodlands!"
 
@@ -150,8 +153,8 @@ def hunt():
     global meat_num
     global response
 
-    events = ["You got a deer! +10 Meat", "You failed to hunt! -5 Meat", "You got a Salmon! +5 Meat"]
-    values = [10, -5, 5]
+    events = ["You got a deer! +3 Meat", "You failed to hunt! -2 Meat", "You got a Salmon! +2 Meat"]
+    values = [3, -2, 2]
     
     random_event = random.randint(0, len(events) - 1)
     
@@ -167,8 +170,8 @@ def mine():
     global stone_num
     global response
 
-    events = ["You got diamonds! +10 Stone", "You fell into a cave! -5 Stone", "You got coal! +5 Stone!"]
-    values = [10, -5, 5]
+    events = ["You got diamonds! +3 Stone", "You fell into a cave! -3 Stone", "You got coal! +2 Stone!"]
+    values = [3, -3, 2]
     
     random_event = random.randint(0, len(events) - 1)
     
@@ -178,6 +181,39 @@ def mine():
         stone_num += values[random_event]
     else:
         print("Please select Eastern Woodlands before hunting.")
+
+# Logging action
+def logging():
+    global wood_num
+    global response
+
+    events = ["You cut down a tree! +2 Wood", "You got stuck in the woods! -1 Wood", "You collected some sticks! +1 Stone"]
+    values = [2, -1, 1]
+    
+    random_event = random.randint(0, len(events) - 1)
+    
+    if current_screen == "eastern_woodlands":
+        # Event Player
+        response = events[random_event]
+        wood_num += values[random_event]
+    else:
+        print("Please select Eastern Woodlands before logging.")
+        
+# Mine action
+def well():
+    global built_well
+    global water_num
+    global response
+    
+    events = ["You collected water! +2 Water", "Your pail fell in the well! -1 Water", "You collected some sticks! +1 Stone"]
+    values = [2, -1, 1]
+    
+    if current_screen == "eastern_woodlands" and built_well == True:
+        # Event Player
+        response = events[random_event]
+        wood_num += values[random_event]
+    else:
+        response = "You need to build a well"
 
 
 
@@ -194,6 +230,9 @@ frame = simplegui.create_frame("Empires Horizon", 800, 800)
 frame.add_button("Eastern Woodlands", select_eastern_woodlands, 200)
 frame.add_button("Hunt", hunt, 200)
 frame.add_button("Mine", mine, 200)
+frame.add_button("Logging", logging, 200)
+'''frame.add_button("Make a well", build, 200)'''
+frame.add_button("Use the well", well, 200)
 
 
 # Background Color
