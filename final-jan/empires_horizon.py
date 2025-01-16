@@ -211,6 +211,7 @@ def eastern_woodlands(canvas, response, stone_icon):
                           (well_icon.get_width(), well_icon.get_height()), 
                           (630, 575),
                           (250, 250))
+    # House Icons
     if built_house == True and house_icon.get_width() > 0 and house_icon.get_height() > 0:
         for i in range(house_num):
             x_pos = 700 - (i * 140)
