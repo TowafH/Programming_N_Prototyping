@@ -17,7 +17,7 @@ To win, you must meet the following conditions:
 ---
 
 ### **Getting Started**
-1. Use CodeSkultpor3 to play the game on the web: https://py3.codeskulptor.org/#user310_zU36RtFvddFm0w9.py
+1. Use CodeSkultpor3 to play the game on the web: https://py3.codeskulptor.org/#user310_g6vkVnSqtwgOniQ.py
 2. Click on **"Eastern Woodlands"** to manage resources in the first region and expand your town.
 ---
 
