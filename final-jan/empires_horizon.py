@@ -234,17 +234,18 @@ def hunt():
     # Event
     if current_screen == "eastern_woodlands":
         response = events[random_event]
+        meat_num += values[random_event]
         # If the player invests in houses, they gain more resources
         if house_num == 1:
-            meat_num += 3 + values[random_event]
+            meat_num += 3
         elif house_num == 2:
-            meat_num += 4 + values[random_event]
+            meat_num += 4
         elif house_num == 3:
-            meat_num += 5 + values[random_event]
+            meat_num += 5
         elif house_num == 4:
-            meat_num += 6 + values[random_event]
+            meat_num += 6
         elif house_num == 5:
-            meat_num += 7 + values[random_event]
+            meat_num += 7
     else:
         print("Please select Eastern Woodlands before hunting.")
 
@@ -267,17 +268,18 @@ def mine():
     # Event
     if current_screen == "eastern_woodlands":
         response = events[random_event]
+        stone_num += values[random_event]
         # If the player invests in houses, they gain more resources
         if house_num == 1:
-            stone_num += 3 + values[random_event]
+            stone_num += 3
         elif house_num == 2:
-            stone_num += 4 + values[random_event]
+            stone_num += 4
         elif house_num == 3:
-            stone_num += 5 + values[random_event]
+            stone_num += 5
         elif house_num == 4:
-            stone_num += 6 + values[random_event]
+            stone_num += 6
         elif house_num == 5:
-            stone_num += 7 + values[random_event]
+            stone_num += 7
     else:
         print("Please select Eastern Woodlands")
 
@@ -295,17 +297,18 @@ def logging():
     if current_screen == "eastern_woodlands":
         # Event Player
         response = events[random_event]
+        wood_num += values[random_event]
         # If the player invests in houses, they gain more resources
         if house_num == 1:
-            wood_num += 3 + values[random_event]
+            wood_num += 3
         elif house_num == 2:
-            wood_num += 4 + values[random_event]
+            wood_num += 4
         elif house_num == 3:
-            wood_num += 5 + values[random_event]
+            wood_num += 5
         elif house_num == 4:
-            wood_num += 6 + values[random_event]
+            wood_num += 6
         elif house_num == 5:
-            wood_num += 7 + values[random_event]
+            wood_num += 7
     else:
         print("Please select Eastern Woodlands")
 
@@ -321,16 +324,17 @@ def well():
     # Event
     if current_screen == "eastern_woodlands" and built_well == True:
         response = events[random_event]
+        water_num += values[random_event]
         if house_num == 1:
-            water_num += 3 + values[random_event]
+            water_num += 3
         elif house_num == 2:
-            water_num += 4 + values[random_event]
+            water_num += 4
         elif house_num == 3:
-            water_num += 5 + values[random_event]
+            water_num += 5
         elif house_num == 4:
-            water_num += 6 + values[random_event]
+            water_num += 6
         elif house_num == 5:
-            water_num += 7 + values[random_event]
+            water_num += 7
     else:
         response = "You need to build a well!"
         
