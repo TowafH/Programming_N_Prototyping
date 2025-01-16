@@ -9,12 +9,12 @@ wood_img = simplegui.load_image("https://i.imgur.com/w8NBqHC.png")
 water_img = simplegui.load_image("https://i.imgur.com/izGzxxF.png")
 population_img = simplegui.load_image("https://i.imgur.com/r6vJgA0.png")
 
-# In-game Icons
+# In-game Images
 stone_icon = simplegui.load_image("https://i.imgur.com/bZhX2UI.png")
 well_icon = simplegui.load_image("")
 house_icon = simplegui.load_image("")
 
-# Screen
+# Screen State
 current_screen = "menu"
 
 # Resources
@@ -31,8 +31,7 @@ built_house = False
 # Response
 response = "Welcome to the Eastern Woodlands!"
 
-# Win/Loss Conditions
-# Win
+# Win Condition
 def win():
     global response
     if meat_num >= 100 and stone_num >= 100 and wood_num >= 100 and water_num >= 100 and population_num >= 50 and house_num >= 5:
@@ -40,7 +39,7 @@ def win():
         return True
     return False
 
-# Loss
+# Loss Condition
 def loss():
     global response
     if meat_num <= 0 and stone_num <= 0 and wood_num <= 0 and water_num <= 0 and population_num <= 0:
@@ -73,6 +72,8 @@ def draw(canvas):
         menu(canvas)
     elif current_screen == "eastern_woodlands":
         eastern_woodlands(canvas, response, stone_icon)
+        win()
+        loss()
         
     global meat_num, stone_num, wood_num, water_num, population_num, built_well, house_num
 
