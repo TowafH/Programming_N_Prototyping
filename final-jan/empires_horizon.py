@@ -54,9 +54,6 @@ def loss():
     if wood_num <= 0:
         response = "You've run out of wood!"
         return True
-    if water_num <= 0:
-        response = "You've run out of water!"
-        return True
     if population_num <= 0:
         response = "Your population has perished!"
         return True
