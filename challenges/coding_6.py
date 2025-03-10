@@ -3,7 +3,7 @@
 # 3/10/25
 
 def is_triangle(n1, n2, n3):
-    if n1 == n2 and n2 == n3 and n1 == 3:
+    if n1 == n2 and n2 == n3 and n1 == n3:
         print("Yes")
     else:
         print("No")
