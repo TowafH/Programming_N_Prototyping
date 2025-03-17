@@ -1,3 +1,6 @@
+# Towaf Hossain
+# PD 1-2
+
 import turtle
 
 def draw(t, length, n):
