@@ -1,5 +1,7 @@
 # Towaf Hossain
 # PD 1-2
+# This program calculates the Greatest Common Divisor (GCD) of two numbers using recursion
+# and prints the process of calculation.
 
 def gcd(a, b):
     if b == 0:
