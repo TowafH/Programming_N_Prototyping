@@ -8,13 +8,16 @@ built-in Python function to check each word and prints the total count.
 '''
 
 def is_abecedarian(s):
-    return list(s) == sorted(s)
+    if sorted(s) == list(s):
+        return True
+    else:
+        return False
 
 words = ["abc", "aeg", "boat", "almost", "ghost", "act", "loop", "billowy", "chimps", "biopsy", "ad"]
 
 count = 0
-for word in words:
-    if is_abecedarian(word):
+for i in words:
+    if is_abecedarian(i) == True:
         count += 1
 
 print("Total abecedarian words:", count)
